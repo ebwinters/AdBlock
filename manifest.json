@@ -1,0 +1,12 @@
+{
+	"name": "Ethan's Adblocker",
+	"description": "Extension to block ads and teach me chrome scripting",
+	"version": "1.0",
+	"manifest_version": 2,
+	"content_scripts": [
+		{
+			"matches": ["https://www.google.com/"],
+			"js": ["myScript.js"]
+		}
+	]
+}
