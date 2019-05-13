@@ -1,30 +1,58 @@
 let divIDs = [
-	"div.google_image_div",
-	"div.banner",
-	"div.ad_unit",
-	"div.ad",
-	"div.ad-container",
-	"div.data-slot",
-	"div.google_image_div",
-	"div.ad-wrapper",
-	"div.beacon",
-	"div.hireme",
-	"div.google_ads_iframe",
-	"div.textwidget",
-	"div.fh",
-	"div.GoogleActiveViewElement",
-	"div.viewability",
-	"div.GoogleActiveViewclass",
-	"div.creative-container",
-	"div.google_ads",
+	'div[id*="google_image_div"]',
+	'div[class*="google_image_div"]',
+	'div[id*="banner"]',
+	'div[class*="banner"]',
+	'div[id*="ad_unit"]',
+	'div[class*="ad_unit"]',
+	'div[id*="ad"]',
+	'div[class*="ad"]',
+	'div[id*="ad-container"]',
+	'div[id*="data-slot"]',
+	'div[id*="ad-wrapper"]',
+	'div[class*="ad-wrapper"]',
+	'div[id*="beacon"]',
+	'div[class*="beacon"]',
+	'div[id*="hireme"]',
+	'div[class*="hireme"]',
+	'div[id*="google_ads_iframe"]',
+	'div[class*="google_ads_iframe"]',
+	'div[id*="textwidget"]',
+	'div[class*="textwidget"]',
+	'div[id*="fh"]',
+	'div[class*="fh"]',
+	'div[id*="GoogleActiveViewElement"]',
+	'div[class*="GoogleActiveViewElement"]',
+	'div[id*="viewability"]',
+	'div[class*="viewability"]',
+	'div[id*="GoogleActiveViewClass"]',
+	'div[class*="GoogleActiveViewClass"]',
+	'div[id*="creative-container"]',
+	'div[class*="creative-container"]',
+	'div[id*="google_ads"]',
+	'div[class*="google_ads"]',
+	'div[id*="GoogleAd"]',
+	'div[class*="GoogleAd"]',
 ];
 
 function run() {
 	setInterval(function() {
-		var el = document.querySelector('div[id*="google_ads_iframe"]');
-      	console.log(el);
-      	console.log("HI");
-		el.parentElement.removeChild(el);
+		divIDs.every(query => {
+			var el = document.querySelectorAll(query);
+			if (el.length > 0) {
+				console.log(query);
+				console.log(el);
+				el.forEach(documentElement => {
+					documentElement.parentElement.removeChild(documentElement);	
+				});
+			}
+			return true;	
+		});
+		//var el = document.querySelectorAll('div[id*="google_ads_iframe"]');
+		//var el = document.querySelectorAll(query);
+      	//console.log(el);
+      	//console.log("HI");
+		//el.parentElement.removeChild(el);
 	}, 3000);
 }
 
@@ -50,7 +78,7 @@ window.onload = run
 	GoogleActiveViewclass
 	creative-container
 	contains "google_ads"
-
+	conains "promotedlink"
 	reddit
 		data-slot
 */
