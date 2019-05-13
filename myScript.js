@@ -19,12 +19,16 @@ let divIDs = [
 	"div.google_ads",
 ];
 
-setTimeout(function() {
-	var el = document.querySelector(".stats");
-	console.log(el);
-	console.log("HI");
-	}, 5000
-);
+function run() {
+	setInterval(function() {
+		var el = document.querySelector('div[id*="google_ads_iframe"]');
+      	console.log(el);
+      	console.log("HI");
+		el.parentElement.removeChild(el);
+	}, 3000);
+}
+
+window.onload = run 
 
 //Popular ad div IDs and classes
 /*
