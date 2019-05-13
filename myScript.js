@@ -33,10 +33,13 @@ let divIDs = [
 	'div[class*="google_ads"]',
 	'div[id*="GoogleAd"]',
 	'div[class*="GoogleAd"]',
+	'div[id*="promotedlink"]',
+	'div[class*="promotedlink"]',
 ];
 
 function run() {
 	setInterval(function() {
+		console.log("HI");
 		divIDs.every(query => {
 			var el = document.querySelectorAll(query);
 			if (el.length > 0) {
@@ -48,11 +51,6 @@ function run() {
 			}
 			return true;	
 		});
-		//var el = document.querySelectorAll('div[id*="google_ads_iframe"]');
-		//var el = document.querySelectorAll(query);
-      	//console.log(el);
-      	//console.log("HI");
-		//el.parentElement.removeChild(el);
 	}, 3000);
 }
 
