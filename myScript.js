@@ -4,7 +4,7 @@ let divIDs = [
 	'div[id*="ad_unit"]',
 	'div[class*="ad_unit"]',
 	'div[class*="ad-container"]',
-	'div[id*="ad-container"]',
+	'div[id="ad-container"]',
 	'div[id*="data-slot"]',
 	'div[class*="data-slot"]',
 	'div[id*="ad-wrapper"]',
@@ -24,6 +24,7 @@ let divIDs = [
 	'div[class*="stickyAd"]',
 	'div[class*="showAd"]',
 	'div[data-google-query-id]',
+	'div[class*="adContainerTarget"]',
 	// //Fix banner to make sure that it only deletes in certain cases
 	// //'div[id*="banner"]',
 	// //'div[class*="banner"]',
